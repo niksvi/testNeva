@@ -1,0 +1,38 @@
+extends ../components/base/layout
+
+block variables
+  - const title = "Выбор времени"
+  - const wrapperMods = ""
+  - const hasHeader = false
+  - const headerMods = ""
+  - const hasFooter = false
+  - const footerMods = ""
+  - const currentUrl = "task3.2.html"
+
+block main
+  main
+    select#route(name='route')
+      option Выберите маршрут
+      option(value='AB') из A в B
+      option(value='BA') из B в A
+      option(value='ABA') из A в B и обратно в А
+    span#time Выберите время
+    select#timeAB
+      option(value='2021-08-21 18:00:00').time 18:00
+      option(value='2021-08-21 18:30:00').time 18:30
+      option(value='2021-08-21 18:45:00').time 18:45
+      option(value='2021-08-21 19:00:00').time 19:00
+      option(value='2021-08-21 19:15:00').time 19:15
+      option(value='2021-08-21 21:00:00').time 21:00
+    select#timeBA
+      option(value='2021-08-21 18:30:00').time 18:30
+      option(value='2021-08-21 18:45:00').time 18:45
+      option(value='2021-08-21 19:00:00').time 19:00
+      option(value='2021-08-21 19:15:00').time 19:15
+      option(value='2021-08-21 19:35:00').time 19:35
+      option(value='2021-08-21 21:50:00').time 21:50
+      option(value='2021-08-21 21:55:00').time 21:55
+    #submit
+      label(for='num') Количество билетов
+      input#num(type="number" value="1")
+      button#btn Посчитать

@@ -1,0 +1,308 @@
+.event {
+  &__list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+}
+
+.event-card {
+  border: 0.3px solid $color-grey;
+  border-radius: 16px;
+  overflow: hidden;
+  margin: 30px 0;
+  width: 100%;
+
+  @include vp-1440 {
+    display: flex;
+  }
+
+  &--new {
+    position: relative;
+
+    .event-card__tripwire {
+      display: block;
+      position: absolute;
+      margin: 0;
+      left: 0;
+      top: 7%;
+      background-color: $color-energy-yellow;
+      color: $color-night-rider;
+      font-weight: 600;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      padding: 0.57rem 1.4rem;
+
+      @include vp-1440 {
+        top: 15%;
+      }
+    }
+  }
+
+  &__tripwire {
+    display: none;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+
+    @include vp-1440 {
+      max-width: 473px;
+    }
+  }
+
+  &__description {
+    padding: 16px 10px 20px;
+    display: flex;
+    flex-direction: column;
+
+    @include vp-1440 {
+      padding-left: 20px;
+    }
+  }
+
+  &__duration {
+    color: $color-nobel;
+    font-size: 12px;
+    margin: 0;
+    display: flex;
+
+    @include vp-768 {
+      font-size: 14px;
+    }
+
+    @include vp-1440 {
+      margin-top: 13px;
+    }
+
+    svg {
+      width: 16px;
+      height: 16px;
+      margin-right: 10px;
+
+      @include vp-1440 {
+        margin-right: 8px;
+      }
+    }
+  }
+
+  &__title {
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 600;
+    color: $color-eclipse;
+    margin: 0;
+    margin-top: 10px;
+    max-width: 450px;
+
+    @include vp-768 {
+      font-size: 26px;
+      line-height: 34px;
+    }
+
+    @include vp-1440 {
+      order: -1;
+      margin-top: 0;
+      max-width: none;
+    }
+  }
+
+  &__features-list {
+    color: $color-matterhorn;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    margin-top: 18px;
+
+    @include vp-1440 {
+      margin-top: 12px;
+    }
+  }
+
+  &__feature {
+    display: flex;
+
+    &:not(:last-child) {
+      margin-bottom: 12px;
+
+      @include vp-1440 {
+        margin-bottom: 14px;
+      }
+    }
+
+    &--timing {
+      flex-wrap: wrap;
+      align-items: center;
+
+      display: grid;
+      grid-template-rows: auto 1fr;
+
+      @include vp-768 {
+        display: flex;
+        flex-wrap: nowrap;
+      }
+
+      @include vp-1440 {
+        margin-top: 22px;
+      }
+    }
+
+    svg {
+      width: 16px;
+      height: 12px;
+      margin-right: 21px;
+      margin-top: 5px;
+      flex-shrink: 0;
+
+      @include vp-1440 {
+        margin-right: 14px;
+      }
+    }
+  }
+
+  &__feature-wrapper {
+    flex-shrink: 0;
+  }
+
+  &__timing-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    margin-top: 12px;
+    padding-left: 37px;
+    width: fit-content;
+
+    @include vp-768 {
+      margin-top: 0;
+    }
+
+    @include vp-1440 {
+      padding-left: 9px;
+    }
+
+    &--open {
+      flex-wrap: wrap;
+      margin-bottom: -15px;
+
+      .event-card__timing-item {
+        margin-bottom: 15px;
+      }
+    }
+  }
+
+  &__timing-item {
+    &:not(:last-child) {
+      margin-right: 7px;
+    }
+
+    &--more {
+      .event-card__timing-link {
+        padding: 3px 14px;
+      }
+    }
+  }
+
+  &__timing-link {
+    background-color: $color-solitude;
+    border-radius: 11px;
+    color: $color-night-rider;
+    padding: 2px 14px;
+    transition: background-color $trans-default, color $trans-default, box-shadow $trans-default;
+
+    @include vp-768 {
+      font-size: 16px;
+    }
+
+    @include vp-1440 {
+      padding: 3px 16px;
+    }
+
+    @include hover-focus {
+      color: $color-default-white;
+      background-color: $color-cornflower-blue;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 36px;
+    padding: 0 7px;
+
+    @include vp-1440 {
+      padding: 0;
+      justify-content: flex-start;
+      margin-top: 32px;
+    }
+  }
+
+  &__price {
+    font-size: 30px;
+    margin: 0;
+
+    @include vp-768 {
+      font-size: 36px;
+    }
+
+    .rouble {
+      margin-left: 6px;
+      font-size: 28px;
+
+      @include vp-768 {
+        font-size: 34px;
+      }
+    }
+  }
+
+  &__price-special {
+    font-size: 10px;
+    margin: 0;
+    margin-top: 1px;
+
+    @include vp-374 {
+      margin-top: 5px;
+      line-height: 10px;
+    }
+
+    @include vp-768 {
+      font-size: 14px;
+      margin-top: 5px;
+    }
+
+    @include vp-1440 {
+      margin-top: 8px;
+    }
+  }
+
+  &__more {
+    color: $color-matterhorn;
+    border-radius: 20px;
+    border: 0.5px solid $color-buddha-gold;
+    background-color: $color-energy-yellow;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 11px;
+    width: 165px;
+    height: fit-content;
+    user-select: none;
+    transition: background-color $trans-default, border-color $trans-default;
+
+    @include vp-1440 {
+      padding: 15px 41px;
+      margin-left: 17px;
+      width: auto;
+    }
+
+    @include hover-focus {
+      background-color: $color-buddha-gold;
+      border-color: $color-energy-yellow;
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "id": 1,
+  "event_id": "003",
+  "event_date": "2021-08-21 13:00:00",
+  "barcode": 1111111,
+  "user_id": "00451",
+  "equal_price": "8550",
+  "created": "2021-01-11 13:22:09",
+  "tickets": [
+    {
+      "mod": "kid",
+      "price": "450",
+      "barcode_ticket": "1111111_001"
+    },
+    {
+      "mod": "kid",
+      "price": "450",
+      "barcode_ticket": "1111111_002"
+    },
+    {
+      "mod": "kid",
+      "price": "450",
+      "barcode_ticket": "1111111_003"
+    },
+    {
+      "mod": "adult",
+      "price": "700",
+      "barcode_ticket": "1111111_101"
+    },
+    {
+      "mod": "adult",
+      "price": "700",
+      "barcode_ticket": "1111111_102"
+    },
+    {
+      "mod": "group",
+      "price": "1500",
+      "barcode_ticket": "1111111_301"
+    },
+    {
+      "mod": "benefit",
+      "price": "200",
+      "barcode_ticket": "1111111_401"
+    }
+  ]
+}

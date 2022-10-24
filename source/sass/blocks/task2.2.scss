@@ -1,0 +1,23 @@
+.blog {
+  position: relative;
+  margin: 0 auto;
+  padding: 20px 15px;
+  width: 990px;
+  max-width: 95%;
+  background-color: #ffffff;
+}
+
+table {
+  width: 100% !important;
+}
+
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.solution {
+  font-size: 2rem;
+  line-height: 2rem;
+  border: 5px dotted red;
+}

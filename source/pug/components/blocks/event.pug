@@ -1,0 +1,52 @@
+mixin event()
+  .event
+    .container
+      ul.event__list
+        li.event__item
+          .event-card.event-card--new
+            p.event-card__tripwire Новинка
+            +picture('content', 'event-slide-1', 'jpg', 473, 369, "Красивая картинка")
+            .event-card__description
+              p.event-card__duration
+                +icon('icon-clock', 16, 16)
+                | 2 часа
+              h3.event-card__title АКЦИЯ - Обзорная экскурсия по рекам и каналам с остановками Hop on Hop Off 2019
+              ul.event-card__features-list
+                li.event-card__feature
+                  +icon('icon-check', 16, 12)
+                  | Билет на целый день
+                li.event-card__feature
+                  +icon('icon-check', 16, 12)
+                  | Неограниченное число катаний
+                li.event-card__feature
+                  +icon('icon-check', 16, 12)
+                  | 6 остановок у главных достопримечательностей
+                li.event-card__feature.event-card__feature--timing
+                  .event-card__feature-wrapper
+                    +icon('icon-check', 16, 12)
+                    | Ближайший рейс сегодня
+                  ul.event-card__timing-list
+                    li.event-card__timing-item.event-card__timing-item--more.visually-hidden
+                      a(href="#", aria-label="Посмотреть еще часы").event-card__timing-link ещё...
+                    li.event-card__timing-item
+                      a(href="#", aria-label="Выбрать билет на 01:00").event-card__timing-link 01:00
+                    li.event-card__timing-item
+                      a(href="#", aria-label="Выбрать билет на 02:00").event-card__timing-link 02:00
+                    li.event-card__timing-item
+                      a(href="#", aria-label="Выбрать билет на 03:00").event-card__timing-link 03:00
+                    li.event-card__timing-item
+                      a(href="#", aria-label="Выбрать билет на 04:00").event-card__timing-link 04:00
+                    li.event-card__timing-item
+                      a(href="#", aria-label="Выбрать билет на 05:00").event-card__timing-link 05:00
+                    li.event-card__timing-item
+                      a(href="#", aria-label="Выбрать билет на 06:00").event-card__timing-link 06:00
+                    li.event-card__timing-item
+                      a(href="#", aria-label="Выбрать билет на 07:00").event-card__timing-link 07:00
+                    li.event-card__timing-item
+                      a(href="#", aria-label="Выбрать билет на 08:00").event-card__timing-link 08:00
+              .event-card__bottom
+                .event-card__price-wrapper
+                  p.event-card__price 900
+                    span.rouble &#8381;
+                  p.event-card__price-special 1200 Р на причале
+                a(href="#").event-card__more Подробнее

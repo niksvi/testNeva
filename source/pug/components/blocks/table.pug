@@ -1,0 +1,131 @@
+mixin table()
+  .table
+    .table-wrapper
+      table(border='1' style='border-collapse: collapse;')
+        tbody
+          tr
+            td id
+            td event_id
+            td event_date
+            td barcode
+            td user_id
+            td equal_price
+            td created
+            td tickets_count
+            td mod
+            td price
+            td barcode_ticket
+          tr
+            td(rowspan="7") 1
+            td(rowspan="7") 003
+            td(rowspan="7") 2021-08-21 13:00:00
+            td(rowspan="7") 1111111
+            td(rowspan="7") 00451
+            td(rowspan="7") 8550
+            td(rowspan="7") 2021-01-11 13:22:09
+            td(rowspan="7") 7
+            td kid
+            td 450
+            td 1111111_001
+          tr
+            td kid
+            td 450
+            td 1111111_002
+          tr
+            td kid
+            td 450
+            td 1111111_003
+          tr
+            td adult
+            td 700
+            td 1111111_101
+          tr
+            td adult
+            td 700
+            td 1111111_102
+          tr
+            td group
+            td 1500
+            td 1111111_301
+          tr
+            td benefit
+            td 200
+            td 1111111_401
+          tr
+            td(rowspan="4") 2
+            td(rowspan="4") 006
+            td(rowspan="4") 2021-07-29 18:00:00
+            td(rowspan="4") 2222222
+            td(rowspan="4") 00364
+            td(rowspan="4") 3850
+            td(rowspan="4") 2021-01-12 16:62:08
+            td(rowspan="4") 4
+            td adult
+            td 700
+            td 2222222_101
+          tr
+            td kid
+            td 450
+            td 2222222_001
+          tr
+            td group
+            td 1500
+            td 2222222_301
+          tr
+            td benefit
+            td 200
+            td 2222222_401
+    p.solution Решение:
+      br
+      | Ответ на обе задачи в том, что нельзя привязывать столбец к названию категории потому, что их может быть хоть 100 штук, а просто добавить один столбец, куда можно записывать любую категорию. А так как у нас у каждого билета уже есть своя категория не сложно также добавить к нему индивидуальный баркод.
+      br
+      | Пришел я к этому просто представив как это будет выглядеть в JSON файле, легче всего билеты сделать массивом, у билета есть ключ - Категория, в свойство которого можно вписать любое наименование.
+    pre
+      code
+        | {
+        |   &quot;id&quot;: 1,
+        |   &quot;event_id&quot;: &quot;003&quot;,
+        |   &quot;event_date&quot;: &quot;2021-08-21 13:00:00&quot;,
+        |   &quot;barcode&quot;: 1111111,
+        |   &quot;user_id&quot;: &quot;00451&quot;,
+        |   &quot;equal_price&quot;: &quot;8550&quot;,
+        |   &quot;created&quot;: &quot;2021-01-11 13:22:09&quot;,
+        |   &quot;tickets&quot;: [
+        |     {
+        |     &quot;mod&quot;: &quot;kid&quot;,
+        |     &quot;price&quot;: &quot;450&quot;,  
+        |     &quot;barcode_ticket&quot;: &quot;1111111_001&quot;
+        |     },
+        |     {
+        |     &quot;mod&quot;: &quot;kid&quot;,
+        |     &quot;price&quot;: &quot;450&quot;,
+        |     &quot;barcode_ticket&quot;: &quot;1111111_002&quot;
+        |     },
+        |     {
+        |     &quot;mod&quot;: &quot;kid&quot;,
+        |     &quot;price&quot;: &quot;450&quot;,
+        |     &quot;barcode_ticket&quot;: &quot;1111111_003&quot;
+        |     },
+        |     {
+        |     &quot;mod&quot;: &quot;adult&quot;,
+        |     &quot;price&quot;: &quot;700&quot;,
+        |     &quot;barcode_ticket&quot;: &quot;1111111_101&quot;
+        |     },
+        |     {
+        |     &quot;mod&quot;: &quot;adult&quot;,
+        |     &quot;price&quot;: &quot;700&quot;,
+        |     &quot;barcode_ticket&quot;: &quot;1111111_102&quot;
+        |     },
+        |     {
+        |     &quot;mod&quot;: &quot;group&quot;,
+        |     &quot;price&quot;: &quot;1500&quot;,
+        |     &quot;barcode_ticket&quot;: &quot;1111111_301&quot;
+        |    },
+        |    {
+        |     &quot;mod&quot;: &quot;benefit&quot;,
+        |     &quot;price&quot;: &quot;200&quot;,
+        |     &quot;barcode_ticket&quot;: &quot;1111111_401&quot;
+        |    }
+        |  ]
+        | }
+
